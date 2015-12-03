@@ -17,14 +17,12 @@ class ApisController extends Controller
         $allowedOrigins = [
             "http://anacreation.dev"
         ];
-        if( $request->headers->has('ORIGIN') and in_array($request->headers->get('ORIGIN'), $allowedOrigins)){
-            $headers = [
-                'Access-Control-Allow-Origin' => $request->headers->get('ORIGIN'),
-                'Access-Control-Allow-Methods'=>'GET',
-                'Content-type'=>"text/plain"
-            ];
-            return response('successful', 200, $headers);
-        } ;
+        $headers = [
+            'Access-Control-Allow-Origin' => $request->headers->get('ORIGIN'),
+            'Access-Control-Allow-Headers'=> 'Content-Type, X-Auth-Token, Origin',
+            'Access-Control-Allow-Methods'=>'GET'
+        ];
+        return response('successful', 200, $headers);
 
     }
 }
