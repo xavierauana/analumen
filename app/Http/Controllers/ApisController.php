@@ -20,6 +20,7 @@ class ApisController extends Controller
         if( $request->headers->has('ORIGIN') and in_array($request->headers->get('ORIGIN'), $allowedOrigins)){
             $headers = [
                 'Access-Control-Allow-Origin' => $request->headers->get('ORIGIN'),
+                'Access-Control-Allow-Methods'=>'GET',
                 'Content-type'=>"text/plain"
             ];
             return response('successful', 200, $headers);
