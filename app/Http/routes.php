@@ -21,37 +21,6 @@ $app->get('/', function () use ($app) {
     return view('index');
 });
 
-$app->get('/list', function () use ($app) {
-    $list = [
-        [
-            'title' => 'This is title',
-            'body'  => 'This is body'
-        ],
-        [
-            'title' => 'This is title2',
-            'body'  => 'This is body2'
-        ],
-        [
-            'title' => 'This is title3',
-            'body'  => 'This is body3'
-        ]
-    ];
+$app->get('/list', ['uses'=>"ApisController@fetchLists"]);
 
-    return $list;
-});
-
-$app->post('/list', function () use ($app) {
-    return ['response'=>'completed', 'data'=> [
-                "Michael Phelps",
-                "Liu Xiang",
-                "Yao Ming",
-                "Allyson Felix",
-                "Shawn Johnson",
-                "Roman Sebrle",
-                "Guo Jingjing",
-                "Tyson Gay",
-                "Asafa Powell",
-                "Usain Bolt"
-            ]];
-});
 

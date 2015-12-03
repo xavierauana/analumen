@@ -50,8 +50,6 @@
         </div>
     </template>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.10/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.1.17/vue-resource.js"></script>
-    <script src="/js/bundled.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>
