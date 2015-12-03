@@ -1,0 +1,5 @@
+<div id="messagesContainer" v-show="hasMessage">
+    <li v-for="message in list"  v-bind:class="isOdd($index)">
+        {{message.name}} say, {{message.message}}
+    </li>
+</div>
